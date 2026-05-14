@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 import { Hero } from "@/components/Hero";
 import { AboutIMSA } from "@/components/AboutIMSA";
 import { OPTModel } from "@/components/OPTModel";
