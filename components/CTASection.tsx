@@ -39,7 +39,7 @@ export function CTASection() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <Button
-              size="xl"
+              size="lg"
               className="bg-swiss-black text-white border border-electric-lime hover:bg-white hover:text-swiss-black transition-colors font-bold px-12 h-16 text-sm uppercase tracking-widest rounded-none min-w-[220px]"
             >
               Apply Now
@@ -53,13 +53,13 @@ export function CTASection() {
           >
             <Button
               variant="outline"
-              size="xl"
+              size="lg"
               className="border-white/20 text-white hover:bg-white hover:text-swiss-black transition-colors font-bold px-12 h-16 text-sm uppercase tracking-widest rounded-none min-w-[220px]"
             >
               Speak to Advisor
             </Button>
           </motion.div>
-
+ 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -67,7 +67,7 @@ export function CTASection() {
           >
             <Button
               variant="ghost"
-              size="xl"
+              size="lg"
               className="text-white/60 hover:text-white hover:bg-white/5 transition-colors font-bold px-12 h-16 text-sm uppercase tracking-widest rounded-none min-w-[220px]"
             >
               Explore Courses

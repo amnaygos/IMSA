@@ -251,14 +251,14 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
           </p>
           <div className="hero-btns flex flex-row gap-5">
             <Button
-              size="xl"
+              size="lg"
               className="bg-swiss-black text-white hover:bg-electric-lime hover:text-swiss-black transition-colors font-bold px-14 h-16 text-base rounded-none"
             >
               Start Analysis
             </Button>
             <Button
               variant="outline"
-              size="xl"
+              size="lg"
               className="border-swiss-black/20 text-swiss-black hover:bg-swiss-black hover:text-white transition-colors h-16 px-14 rounded-none"
             >
               Learn More
@@ -280,7 +280,7 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
             The intersection of data and drive.
           </p>
           <Button
-            size="xl"
+            size="lg"
             className="bg-swiss-black text-white hover:bg-electric-lime hover:text-swiss-black transition-colors font-bold px-16 h-16 text-base rounded-none"
           >
             Our Methods
@@ -301,7 +301,7 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
             Where movement is a masterpiece.
           </p>
           <Button
-            size="xl"
+            size="lg"
             className="bg-electric-lime text-swiss-black hover:bg-swiss-black hover:text-white transition-colors font-bold px-20 h-16 text-base rounded-none"
           >
             Join the Academy

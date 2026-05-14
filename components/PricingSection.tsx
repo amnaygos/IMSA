@@ -82,7 +82,7 @@ export function PricingSection() {
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
               <Button
-                size="xl"
+                size="lg"
                 className="bg-swiss-black text-white hover:bg-electric-lime hover:text-swiss-black transition-colors font-bold px-16 h-16 text-base rounded-none"
               >
                 Request Pricing Details
