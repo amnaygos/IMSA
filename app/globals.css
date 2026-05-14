@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-electric-lime: #CAFF00;
+  --color-swiss-black: #141414;
+  --color-swiss-gray: #E4E3E0;
+  --color-swiss-white: #F1F2F2;
+  
+  --font-display: var(--font-display), sans-serif;
+  --font-sans: var(--font-sans), sans-serif;
+  --font-mono: var(--font-mono), monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-swiss-white text-swiss-black selection:bg-electric-lime selection:text-swiss-black;
+  }
+}
+
+h1, h2, h3 {
+  @apply tracking-tight uppercase;
+}
+
