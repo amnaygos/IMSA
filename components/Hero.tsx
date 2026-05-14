@@ -137,40 +137,33 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
 
     // ── Entrance Animation ──
     if (startAnimation) {
-      // Force initial hidden state to prevent flash of content
-      gsap.set([".hero-c1-span", ".hero-h1", ".hero-p", ".hero-btns", ".hero-scroll"], { opacity: 0 });
-
       const entranceTl = gsap.timeline({
         delay: 0.1 
       });
 
-      entranceTl.fromTo(".hero-c1-span", 
-        { opacity: 0, x: -30 },
-        { opacity: 1, x: 0, duration: 1, ease: "power4.out" }
+      entranceTl.from(".hero-c1-span", 
+        { opacity: 0, x: -30, duration: 1, ease: "power4.out" }
       )
-      .fromTo(".hero-h1", 
-        { opacity: 0, y: 100, clipPath: "inset(0 0 100% 0)" },
-        { opacity: 1, y: 0, clipPath: "inset(0 0 0% 0)", duration: 1.5, ease: "expo.out" },
+      .from(".hero-h1", 
+        { opacity: 0, y: 100, clipPath: "inset(0 0 100% 0)", duration: 1.5, ease: "expo.out" },
         "-=0.8"
       )
-      .fromTo(".hero-p", 
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
+      .from(".hero-p", 
+        { opacity: 0, y: 20, duration: 1, ease: "power3.out" },
         "-=1"
       )
-      .fromTo(".hero-btns", 
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
+      .from(".hero-btns", 
+        { opacity: 0, y: 20, duration: 1, ease: "power3.out" },
         "-=0.8"
       )
-      .fromTo(".hero-scroll",
-        { opacity: 0 },
-        { opacity: 0.3, duration: 1 },
+      .from(".hero-scroll",
+        { opacity: 0, duration: 1 },
         "-=0.5"
       );
     }
 
     // Text animations — Fix #6: NO blur. Only opacity + translateY.
+    // Ensure these only start AFTER the entrance
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -245,18 +238,18 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
           className="hero-c1 absolute flex flex-col items-start text-left max-w-4xl"
           style={{ transform: "translate3d(0,0,0)", willChange: "transform, opacity" }}
         >
-          <span className="hero-c1-span opacity-0 mb-10 inline-block border border-swiss-black/10 px-6 py-2 font-mono text-[10px] uppercase tracking-[0.4em] font-medium text-swiss-black rounded-full">
+          <span className="hero-c1-span mb-10 inline-block border border-swiss-black/10 px-6 py-2 font-mono text-[10px] uppercase tracking-[0.4em] font-medium text-swiss-black rounded-full">
             Science in Motion
           </span>
-          <h1 className="hero-h1 opacity-0 font-display text-[10vw] lg:text-[140px] leading-[0.8] font-black text-swiss-black mb-12 uppercase tracking-tighter">
+          <h1 className="hero-h1 font-display text-[10vw] lg:text-[140px] leading-[0.8] font-black text-swiss-black mb-12 uppercase tracking-tighter">
             Unleash<br />
             Potential
           </h1>
-          <p className="hero-p opacity-0 text-xl lg:text-2xl text-swiss-black/60 max-w-xl mb-14 leading-snug font-light">
+          <p className="hero-p text-xl lg:text-2xl text-swiss-black/60 max-w-xl mb-14 leading-snug font-light">
             Biomechanical diagnostics meets elite performance.<br />
             Decoded for the ambitious.
           </p>
-          <div className="hero-btns opacity-0 flex flex-row gap-5">
+          <div className="hero-btns flex flex-row gap-5">
             <Button
               size="xl"
               className="bg-swiss-black text-white hover:bg-electric-lime hover:text-swiss-black transition-colors font-bold px-14 h-16 text-base rounded-none"
@@ -318,7 +311,7 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
       </div>
 
       {/* Scroll indicator */}
-      <div className="hero-scroll opacity-0 absolute bottom-14 left-1/2 -translate-x-1/2 flex flex-col items-center gap-5 pointer-events-none">
+      <div className="hero-scroll absolute bottom-14 left-1/2 -translate-x-1/2 flex flex-col items-center gap-5 pointer-events-none">
         <div className="w-px h-16 bg-gradient-to-b from-swiss-black via-swiss-black/20 to-transparent" />
         <span className="font-mono text-[8px] uppercase tracking-[0.5em] text-swiss-black">Scroll</span>
       </div>
