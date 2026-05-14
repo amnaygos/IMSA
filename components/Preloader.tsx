@@ -3,7 +3,12 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
-export function Preloader() {
+interface PreloaderProps {
+  onComplete?: () => void;
+}
+
+export function Preloader({ onComplete }: PreloaderProps) {
+  const [isExiting, setIsExiting] = useState(false);
   const [isRemoved, setIsRemoved] = useState(false);
 
   useEffect(() => {
@@ -12,15 +17,19 @@ export function Preloader() {
     
     // Auto-remove after animation sequence
     const timer = setTimeout(() => {
+      setIsExiting(true);
       document.body.style.overflow = "unset";
-      setIsRemoved(true);
-    }, 4500); // Sequence duration + buffer
+      if (onComplete) onComplete();
+      
+      // Remove from DOM after transition
+      setTimeout(() => setIsRemoved(true), 1000);
+    }, 4500); 
 
     return () => {
       document.body.style.overflow = "unset";
       clearTimeout(timer);
     };
-  }, []);
+  }, [onComplete]);
 
   if (isRemoved) return null;
 

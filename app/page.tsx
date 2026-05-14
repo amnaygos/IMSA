@@ -31,11 +31,13 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <main className="relative bg-swiss-white">
-      <Preloader />
+      <Preloader onComplete={() => setIsLoaded(true)} />
       <Navbar />
-      <Hero />
+      <Hero startAnimation={isLoaded} />
       
       {/* Refined Section Stack */}
       <AboutIMSA />
