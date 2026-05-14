@@ -138,27 +138,32 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
     // ── Entrance Animation ──
     if (startAnimation) {
       const entranceTl = gsap.timeline({
-        delay: 0.2
+        delay: 0.5 // Allow preloader to fully clear
       });
 
       entranceTl.fromTo(".hero-c1-span", 
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+        { opacity: 0, x: -30 },
+        { opacity: 1, x: 0, duration: 1, ease: "power4.out" }
       )
       .fromTo(".hero-h1", 
-        { opacity: 0, y: 40 },
-        { opacity: 1, y: 0, duration: 1, ease: "expo.out" },
-        "-=0.6"
+        { opacity: 0, y: 100, clipPath: "inset(0 0 100% 0)" },
+        { opacity: 1, y: 0, clipPath: "inset(0 0 0% 0)", duration: 1.5, ease: "expo.out" },
+        "-=0.8"
       )
       .fromTo(".hero-p", 
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-        "-=0.7"
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
+        "-=1"
       )
       .fromTo(".hero-btns", 
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-        "-=0.6"
+        { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
+        "-=0.8"
+      )
+      .fromTo(".hero-scroll",
+        { opacity: 0 },
+        { opacity: 0.3, duration: 1 },
+        "-=0.5"
       );
     }
 
@@ -310,7 +315,7 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-14 left-1/2 -translate-x-1/2 flex flex-col items-center gap-5 pointer-events-none opacity-30">
+      <div className="hero-scroll opacity-0 absolute bottom-14 left-1/2 -translate-x-1/2 flex flex-col items-center gap-5 pointer-events-none">
         <div className="w-px h-16 bg-gradient-to-b from-swiss-black via-swiss-black/20 to-transparent" />
         <span className="font-mono text-[8px] uppercase tracking-[0.5em] text-swiss-black">Scroll</span>
       </div>
