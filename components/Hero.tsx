@@ -105,6 +105,13 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
     };
 
     const state = renderState.current;
+    
+    // DRAW FIRST FRAME IMMEDIATELY
+    if (images[0]) {
+      drawFrame(0);
+      state.lastDrawnFrame = 0;
+    }
+
     state.rafId = requestAnimationFrame(loop);
 
     return () => {
@@ -230,18 +237,18 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
           className="hero-c1 absolute flex flex-col items-start text-left max-w-4xl"
           style={{ transform: "translate3d(0,0,0)", willChange: "transform, opacity" }}
         >
-          <span className="hero-c1-span opacity-0 mb-10 inline-block border border-swiss-black/10 px-6 py-2 font-mono text-[10px] uppercase tracking-[0.4em] font-medium text-swiss-black rounded-full">
+          <span className="hero-c1-span mb-10 inline-block border border-swiss-black/10 px-6 py-2 font-mono text-[10px] uppercase tracking-[0.4em] font-medium text-swiss-black rounded-full">
             Science in Motion
           </span>
-          <h1 className="hero-h1 opacity-0 font-display text-[10vw] lg:text-[140px] leading-[0.8] font-black text-swiss-black mb-12 uppercase tracking-tighter">
+          <h1 className="hero-h1 font-display text-[10vw] lg:text-[140px] leading-[0.8] font-black text-swiss-black mb-12 uppercase tracking-tighter">
             Unleash<br />
             Potential
           </h1>
-          <p className="hero-p opacity-0 text-xl lg:text-2xl text-swiss-black/60 max-w-xl mb-14 leading-snug font-light">
+          <p className="hero-p text-xl lg:text-2xl text-swiss-black/60 max-w-xl mb-14 leading-snug font-light">
             Biomechanical diagnostics meets elite performance.<br />
             Decoded for the ambitious.
           </p>
-          <div className="hero-btns opacity-0 flex flex-row gap-5">
+          <div className="hero-btns flex flex-row gap-5">
             <Button
               size="xl"
               className="bg-swiss-black text-white hover:bg-electric-lime hover:text-swiss-black transition-colors font-bold px-14 h-16 text-base rounded-none"
