@@ -19,10 +19,12 @@ export function Preloader({ onComplete }: PreloaderProps) {
     const timer = setTimeout(() => {
       setIsExiting(true);
       document.body.style.overflow = "unset";
-      if (onComplete) onComplete();
       
-      // Remove from DOM after transition
-      setTimeout(() => setIsRemoved(true), 1000);
+      // Call onComplete after the fade out transition is finished
+      setTimeout(() => {
+        if (onComplete) onComplete();
+        setIsRemoved(true);
+      }, 1000);
     }, 4500); 
 
     return () => {

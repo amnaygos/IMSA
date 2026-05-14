@@ -138,7 +138,7 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
     // ── Entrance Animation ──
     if (startAnimation) {
       const entranceTl = gsap.timeline({
-        delay: 0.5 // Allow preloader to fully clear
+        delay: 0.1 
       });
 
       entranceTl.fromTo(".hero-c1-span", 
