@@ -222,44 +222,43 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
         style={{ willChange: "contents", opacity: isReady ? 1 : 0, transition: "opacity 0.6s" }}
       />
 
-      {/* Minimal vignette — no animated blur, just a static gradient */}
+      {/* Vignette — stronger on mobile so text stays readable */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "linear-gradient(to right, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.1) 50%, transparent 100%)",
+          background: "linear-gradient(to right, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.7) 45%, rgba(255,255,255,0.15) 75%, transparent 100%)",
         }}
       />
 
-      {/* Content — Fix #8: promote layers for compositing */}
-      <div className="relative z-10 h-full flex items-center px-8 lg:px-32">
+      {/* Content */}
+      <div className="relative z-10 h-full flex items-center px-6 sm:px-8 lg:px-32">
 
         {/* Step 1 */}
         <div
           className="hero-c1 absolute flex flex-col items-start text-left max-w-4xl"
           style={{ transform: "translate3d(0,0,0)", willChange: "transform, opacity" }}
         >
-          <span className="hero-c1-span mb-10 inline-block border border-swiss-black/10 px-6 py-2 font-mono text-[10px] uppercase tracking-[0.4em] font-medium text-swiss-black rounded-full">
+          <span className="hero-c1-span mb-5 lg:mb-10 inline-block border border-swiss-black/10 px-4 sm:px-6 py-2 font-mono text-[10px] uppercase tracking-[0.4em] font-medium text-swiss-black rounded-full">
             Science in Motion
           </span>
-          <h1 className="hero-h1 font-display text-[10vw] lg:text-[140px] leading-[0.8] font-black text-swiss-black mb-12 uppercase tracking-tighter">
+          <h1 className="hero-h1 font-display text-[clamp(2.5rem,10vw,140px)] leading-[0.85] font-black text-swiss-black mb-5 lg:mb-12 uppercase tracking-tighter">
             Unleash<br />
             Potential
           </h1>
-          <p className="hero-p text-xl lg:text-2xl text-swiss-black/60 max-w-xl mb-14 leading-snug font-light">
-            Biomechanical diagnostics meets elite performance.<br />
-            Decoded for the ambitious.
+          <p className="hero-p text-base sm:text-xl lg:text-2xl text-swiss-black/60 max-w-xl mb-7 lg:mb-14 leading-snug font-light">
+            Biomechanical diagnostics meets elite performance. Decoded for the ambitious.
           </p>
-          <div className="hero-btns flex flex-col sm:flex-row gap-4">
+          <div className="hero-btns flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
             <Button
               size="lg"
-              className="bg-swiss-black text-white hover:bg-electric-lime hover:text-swiss-black transition-colors font-bold px-10 sm:px-14 h-14 sm:h-16 text-base rounded-none w-full sm:w-auto"
+              className="bg-swiss-black text-white hover:bg-electric-lime hover:text-swiss-black transition-colors font-bold px-10 sm:px-14 h-13 sm:h-16 text-sm sm:text-base rounded-none w-full sm:w-auto"
             >
               Start Analysis
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="border-swiss-black/20 text-swiss-black hover:bg-swiss-black hover:text-white transition-colors h-14 sm:h-16 px-10 sm:px-14 rounded-none w-full sm:w-auto"
+              className="border-swiss-black/20 text-swiss-black hover:bg-swiss-black hover:text-white transition-colors h-13 sm:h-16 px-10 sm:px-14 rounded-none w-full sm:w-auto text-sm sm:text-base"
             >
               Learn More
             </Button>
@@ -271,17 +270,16 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
           className="hero-c2 absolute opacity-0 flex flex-col items-start text-left max-w-4xl"
           style={{ transform: "translate3d(0,60px,0)", willChange: "transform, opacity" }}
         >
-          <h2 className="font-display text-[10vw] lg:text-[120px] leading-[0.85] font-black text-swiss-black mb-12 uppercase tracking-tighter">
+          <h2 className="font-display text-[clamp(2.2rem,10vw,120px)] leading-[0.85] font-black text-swiss-black mb-5 lg:mb-12 uppercase tracking-tighter">
             Master the<br />
             Movement
           </h2>
-          <p className="text-xl lg:text-2xl text-swiss-black/60 max-w-xl mb-14 leading-snug font-light">
-            Precision coaching at the molecular level.<br />
-            The intersection of data and drive.
+          <p className="text-base sm:text-xl lg:text-2xl text-swiss-black/60 max-w-xl mb-7 lg:mb-14 leading-snug font-light">
+            Precision coaching at the molecular level. The intersection of data and drive.
           </p>
           <Button
             size="lg"
-            className="bg-swiss-black text-white hover:bg-electric-lime hover:text-swiss-black transition-colors font-bold px-10 sm:px-16 h-14 sm:h-16 text-base rounded-none w-full sm:w-auto"
+            className="bg-swiss-black text-white hover:bg-electric-lime hover:text-swiss-black transition-colors font-bold px-10 sm:px-16 h-13 sm:h-16 text-sm sm:text-base rounded-none w-full sm:w-auto"
           >
             Our Methods
           </Button>
@@ -292,17 +290,16 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
           className="hero-c3 absolute opacity-0 flex flex-col items-start text-left max-w-4xl"
           style={{ transform: "translate3d(0,60px,0)", willChange: "transform, opacity" }}
         >
-          <h2 className="font-display text-[10vw] lg:text-[120px] leading-[0.85] font-black text-swiss-black mb-12 uppercase tracking-tighter">
+          <h2 className="font-display text-[clamp(2.2rem,10vw,120px)] leading-[0.85] font-black text-swiss-black mb-5 lg:mb-12 uppercase tracking-tighter">
             Elite<br />
             Standards
           </h2>
-          <p className="text-xl lg:text-2xl text-swiss-black/60 max-w-xl mb-14 leading-snug font-light">
-            Join the ranks of the high-performance academy.<br />
-            Where movement is a masterpiece.
+          <p className="text-base sm:text-xl lg:text-2xl text-swiss-black/60 max-w-xl mb-7 lg:mb-14 leading-snug font-light">
+            Join the ranks of the high-performance academy. Where movement is a masterpiece.
           </p>
           <Button
             size="lg"
-            className="bg-electric-lime text-swiss-black hover:bg-swiss-black hover:text-white transition-colors font-bold px-10 sm:px-20 h-14 sm:h-16 text-base rounded-none w-full sm:w-auto"
+            className="bg-electric-lime text-swiss-black hover:bg-swiss-black hover:text-white transition-colors font-bold px-10 sm:px-20 h-13 sm:h-16 text-sm sm:text-base rounded-none w-full sm:w-auto"
           >
             Join the Academy
           </Button>

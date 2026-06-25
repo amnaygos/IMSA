@@ -10,7 +10,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="w-full bg-swiss-white relative z-50">
+    <header className="w-full bg-swiss-white sticky top-0 z-50 border-b border-swiss-black/5">
       <div className="flex items-center justify-between w-full px-6 lg:px-12 py-4">
         {/* LOGO */}
         <Link href="/" className="flex items-center group" onClick={() => setMobileOpen(false)}>
@@ -19,12 +19,12 @@ export function Navbar() {
           <img
             src="/images/IMSA.png"
             alt="International Movement & Science Academy"
-            className="h-8 w-auto invert contrast-200"
+            className="h-7 w-auto invert contrast-200"
           />
         </Link>
 
-        {/* DESKTOP NAV */}
-        <nav className="hidden md:flex gap-10 lg:gap-12 font-mono text-sm tracking-widest uppercase items-center">
+        {/* DESKTOP NAV — only at lg+ so hamburger always covers the gap */}
+        <nav className="hidden lg:flex gap-10 xl:gap-12 font-mono text-sm tracking-widest uppercase items-center">
           <Link href="#about" className="hover:opacity-60 transition-opacity">About</Link>
           <Link href="#courses" className="hover:opacity-60 transition-opacity">Courses</Link>
           <Link href="#nasm" className="hover:opacity-60 transition-opacity">NASM Cert</Link>
