@@ -26,7 +26,7 @@ export function WhyNASM() {
             04 — Why NASM
           </span>
           <div className="inline-block px-0 py-4">
-            <img src="/images/nasmlogo.svg" alt="NASM Logo" className="h-10 lg:h-14 w-auto" />
+            <img src="/images/nasm-logo-white.png" alt="NASM Logo" className="h-14 lg:h-20 w-auto" style={{ filter: "brightness(0)" }} />
           </div>
           <div className="inline-flex items-center gap-3 border border-swiss-black/20 px-5 py-2">
             <div className="w-2 h-2 rounded-full bg-electric-lime" />

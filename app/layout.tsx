@@ -1,4 +1,4 @@
-import type {Metadata} from 'next';
+﻿import type {Metadata} from 'next';
 import { Space_Grotesk, Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 
@@ -18,7 +18,7 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'IMSI - NASM Certification',
+  title: 'IMSA - NASM Certification',
   description: 'International Movement & Science Academy',
 };
 

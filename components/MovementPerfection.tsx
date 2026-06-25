@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { motion } from "motion/react";
@@ -29,7 +29,7 @@ export function MovementPerfection() {
             <p className="text-lg lg:text-xl text-swiss-black/70 max-w-xl mb-10 leading-relaxed font-light">
               True athletic excellence is found in the smallest margins. We decode the kinetic chain to its most fundamental elements, ensuring every joint angle and muscle activation is optimized for peak efficiency. 
               <br /><br />
-              At IMSI, we don&apos;t just train athletes; we re-engineer their movement patterns through scientific precision and AI-driven diagnostics.
+              At IMSA, we don&apos;t just train athletes; we re-engineer their movement patterns through scientific precision and AI-driven diagnostics.
             </p>
 
             <div className="flex items-center gap-8">

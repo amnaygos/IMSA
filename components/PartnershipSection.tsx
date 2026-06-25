@@ -42,7 +42,7 @@ export function PartnershipSection() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <img src="/images/nasmlogo.svg" alt="NASM Logo" className="h-10 lg:h-16 w-auto" />
+            <img src="/images/nasm-logo-white.png" alt="NASM Logo" className="h-14 lg:h-20 w-auto" style={{ filter: "brightness(0)" }} />
           </motion.div>
         </div>
 
