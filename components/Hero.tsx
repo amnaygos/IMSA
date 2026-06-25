@@ -235,7 +235,7 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
 
         {/* Step 1 */}
         <div
-          className="hero-c1 absolute flex flex-col items-start text-left max-w-4xl"
+          className="hero-c1 absolute left-6 right-6 sm:left-auto sm:right-auto sm:max-w-4xl flex flex-col items-start text-left"
           style={{ transform: "translate3d(0,0,0)", willChange: "transform, opacity" }}
         >
           <span className="hero-c1-span mb-5 lg:mb-10 inline-block border border-swiss-black/10 px-4 sm:px-6 py-2 font-mono text-[10px] uppercase tracking-[0.4em] font-medium text-swiss-black rounded-full">
@@ -248,7 +248,7 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
           <p className="hero-p text-base sm:text-xl lg:text-2xl text-swiss-black/60 max-w-xl mb-7 lg:mb-14 leading-snug font-light">
             Biomechanical diagnostics meets elite performance. Decoded for the ambitious.
           </p>
-          <div className="hero-btns flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
+          <div className="hero-btns flex flex-col sm:flex-row gap-3 sm:gap-4">
             <Button
               size="lg"
               className="bg-swiss-black text-white hover:bg-electric-lime hover:text-swiss-black transition-colors font-bold px-10 sm:px-14 h-13 sm:h-16 text-sm sm:text-base rounded-none w-full sm:w-auto"
@@ -267,7 +267,7 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
 
         {/* Step 2 */}
         <div
-          className="hero-c2 absolute opacity-0 flex flex-col items-start text-left max-w-4xl"
+          className="hero-c2 absolute left-6 right-6 sm:left-auto sm:right-auto sm:max-w-4xl opacity-0 flex flex-col items-start text-left"
           style={{ transform: "translate3d(0,60px,0)", willChange: "transform, opacity" }}
         >
           <h2 className="font-display text-[clamp(2.2rem,10vw,120px)] leading-[0.85] font-black text-swiss-black mb-5 lg:mb-12 uppercase tracking-tighter">
@@ -287,7 +287,7 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
 
         {/* Step 3 */}
         <div
-          className="hero-c3 absolute opacity-0 flex flex-col items-start text-left max-w-4xl"
+          className="hero-c3 absolute left-6 right-6 sm:left-auto sm:right-auto sm:max-w-4xl opacity-0 flex flex-col items-start text-left"
           style={{ transform: "translate3d(0,60px,0)", willChange: "transform, opacity" }}
         >
           <h2 className="font-display text-[clamp(2.2rem,10vw,120px)] leading-[0.85] font-black text-swiss-black mb-5 lg:mb-12 uppercase tracking-tighter">

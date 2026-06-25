@@ -12,6 +12,9 @@
 }
 
 @layer base {
+  html {
+    overflow-x: clip; /* prevent horizontal scroll from any overflowing element */
+  }
   body {
     @apply bg-swiss-white text-swiss-black selection:bg-electric-lime selection:text-swiss-black;
   }
