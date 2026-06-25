@@ -7,6 +7,7 @@ import {
   Users,
   GraduationCap,
 } from "lucide-react";
+import { NASMNavbar } from "@/components/NASMNavbar";
 
 // ─────────────────────────────────────────────
 // NASM Brand Tokens
@@ -30,100 +31,7 @@ export default function NASMPartnershipPage() {
       }}
     >
       {/* ─────────── NAVBAR ─────────── */}
-      <header
-        className="sticky top-0 z-50"
-        style={{ backgroundColor: "#ffffff", borderBottom: "1px solid #e0ded0" }}
-      >
-        <div className="max-w-7xl mx-auto px-6 lg:px-16 h-[68px] flex items-center justify-between gap-8">
-          {/* Left: logos */}
-          <div className="flex items-center gap-4">
-            <img
-              src="/images/nasm-logo-white.png"
-              alt="NASM"
-              style={{ height: 36, width: "auto", filter: "brightness(0)" }}
-            />
-            <div style={{ width: 1, height: 28, backgroundColor: "#e0ded0" }} />
-            <div className="flex items-center gap-2.5">
-              <img
-                src="/images/IMSAWHITE.svg"
-                alt="IMSA"
-                className="h-6 w-auto flex-shrink-0"
-                style={{ filter: "brightness(0)" }}
-              />
-              <span
-                className="hidden sm:block"
-                style={{
-                  fontSize: "0.6rem",
-                  letterSpacing: "0.18em",
-                  color: "#5f5d5d",
-                  textTransform: "uppercase",
-                  fontWeight: 600,
-                }}
-              >
-                International Partner
-              </span>
-            </div>
-          </div>
-
-          {/* Center nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {[
-              ["About", "#about"],
-              ["Certifications", "#certifications"],
-              ["OPT Model", "#opt-model"],
-              ["Enroll", "#enroll"],
-            ].map(([label, href]) => (
-              <a
-                key={label}
-                href={href}
-                style={{
-                  fontSize: "0.875rem",
-                  color: "#171714",
-                  textDecoration: "none",
-                  fontWeight: 500,
-                  letterSpacing: "0.02em",
-                }}
-                className="hover:opacity-60 transition-opacity"
-              >
-                {label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Right: CTAs */}
-          <div className="flex items-center gap-3">
-            <Link
-              href="/"
-              style={{
-                fontSize: "0.75rem",
-                color: "#5f5d5d",
-                textDecoration: "none",
-                letterSpacing: "0.05em",
-              }}
-              className="hidden lg:block hover:opacity-60 transition-opacity"
-            >
-              ← Back to IMSA
-            </Link>
-            <a
-              href="#enroll"
-              style={{
-                backgroundColor: "#e8f557",
-                color: "#123257",
-                padding: "10px 22px",
-                fontWeight: 700,
-                fontSize: "0.8rem",
-                letterSpacing: "0.06em",
-                textDecoration: "none",
-                textTransform: "uppercase",
-                display: "inline-block",
-                whiteSpace: "nowrap",
-              }}
-            >
-              Get Certified →
-            </a>
-          </div>
-        </div>
-      </header>
+      <NASMNavbar />
 
       {/* ─────────── HERO ─────────── */}
       <section
@@ -685,7 +593,7 @@ export default function NASMPartnershipPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
               {
                 phase: "01",
@@ -1040,9 +948,9 @@ export default function NASMPartnershipPage() {
       {/* ─────────── FOOTER ─────────── */}
       <footer style={{ backgroundColor: "#0b2244" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-16 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-12 mb-12 items-start">
+          <div className="grid grid-cols-2 md:grid-cols-[1fr_auto_auto] gap-8 md:gap-12 mb-12 items-start">
             {/* Brand */}
-            <div>
+            <div className="col-span-2 md:col-span-1">
               <div className="flex items-center gap-4 mb-5">
                 <img
                   src="/images/nasm-logo-white.png"

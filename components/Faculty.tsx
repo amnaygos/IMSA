@@ -43,6 +43,14 @@ export function Faculty() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [current, setCurrent] = useState(0);
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 1024);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -89,7 +97,11 @@ export function Faculty() {
         <div className="flex-1 overflow-hidden">
           <div
             className="flex gap-4 transition-transform duration-500"
-            style={{ transform: `translateX(calc(-${current * (100 / 3)}% - ${current * (16 / 3)}px))` }}
+            style={{
+              transform: isMobile
+                ? `translateX(calc(-${current * 100}% - ${current * 16}px))`
+                : `translateX(calc(-${current * (100 / 3)}% - ${current * (16 / 3)}px))`
+            }}
           >
             {faculty.map((f, i) => (
               <div

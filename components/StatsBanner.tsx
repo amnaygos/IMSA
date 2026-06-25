@@ -21,7 +21,7 @@ export function StatsBanner() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="flex flex-col p-8 lg:p-12"
+            className="flex flex-col p-5 sm:p-8 lg:p-12"
           >
             <div className="font-mono text-4xl lg:text-6xl font-bold tracking-tighter mb-2">
               {stat.value}

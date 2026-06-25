@@ -29,9 +29,9 @@ export function Footer() {
   return (
     <footer className="w-full bg-swiss-white pt-24 pb-12 border-t border-swiss-black/5">
       <div className="w-full px-6 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-24">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8 mb-24">
           {/* Column 1: Brand */}
-          <div className="flex flex-col gap-6">
+          <div className="col-span-2 lg:col-span-1 flex flex-col gap-6">
             <Link href="/" className="flex items-center group">
               <Logo variant="dark" />
             </Link>

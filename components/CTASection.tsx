@@ -32,43 +32,46 @@ export function CTASection() {
           Develop the knowledge, confidence, and practical coaching mastery required to succeed within the modern fitness and performance industry.
         </motion.p>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 sm:gap-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
+            className="w-full sm:w-auto"
           >
             <Button
               size="lg"
-              className="bg-swiss-black text-white border border-electric-lime hover:bg-white hover:text-swiss-black transition-colors font-bold px-12 h-16 text-sm uppercase tracking-widest rounded-none min-w-[220px]"
+              className="w-full sm:w-auto bg-swiss-black text-white border border-electric-lime hover:bg-white hover:text-swiss-black transition-colors font-bold px-12 h-14 sm:h-16 text-sm uppercase tracking-widest rounded-none"
             >
               Apply Now
             </Button>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.5 }}
+            className="w-full sm:w-auto"
           >
             <Button
               variant="outline"
               size="lg"
-              className="border-white/20 text-white hover:bg-white hover:text-swiss-black transition-colors font-bold px-12 h-16 text-sm uppercase tracking-widest rounded-none min-w-[220px]"
+              className="w-full sm:w-auto border-white/20 text-white hover:bg-white hover:text-swiss-black transition-colors font-bold px-12 h-14 sm:h-16 text-sm uppercase tracking-widest rounded-none"
             >
               Speak to Advisor
             </Button>
           </motion.div>
- 
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.6 }}
+            className="w-full sm:w-auto"
           >
             <Button
               variant="ghost"
               size="lg"
-              className="text-white/60 hover:text-white hover:bg-white/5 transition-colors font-bold px-12 h-16 text-sm uppercase tracking-widest rounded-none min-w-[220px]"
+              className="w-full sm:w-auto text-white/60 hover:text-white hover:bg-white/5 transition-colors font-bold px-12 h-14 sm:h-16 text-sm uppercase tracking-widest rounded-none"
             >
               Explore Courses
             </Button>

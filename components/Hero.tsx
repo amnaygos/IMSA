@@ -249,17 +249,17 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
             Biomechanical diagnostics meets elite performance.<br />
             Decoded for the ambitious.
           </p>
-          <div className="hero-btns flex flex-row gap-5">
+          <div className="hero-btns flex flex-col sm:flex-row gap-4">
             <Button
               size="lg"
-              className="bg-swiss-black text-white hover:bg-electric-lime hover:text-swiss-black transition-colors font-bold px-14 h-16 text-base rounded-none"
+              className="bg-swiss-black text-white hover:bg-electric-lime hover:text-swiss-black transition-colors font-bold px-10 sm:px-14 h-14 sm:h-16 text-base rounded-none w-full sm:w-auto"
             >
               Start Analysis
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="border-swiss-black/20 text-swiss-black hover:bg-swiss-black hover:text-white transition-colors h-16 px-14 rounded-none"
+              className="border-swiss-black/20 text-swiss-black hover:bg-swiss-black hover:text-white transition-colors h-14 sm:h-16 px-10 sm:px-14 rounded-none w-full sm:w-auto"
             >
               Learn More
             </Button>
@@ -281,7 +281,7 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
           </p>
           <Button
             size="lg"
-            className="bg-swiss-black text-white hover:bg-electric-lime hover:text-swiss-black transition-colors font-bold px-16 h-16 text-base rounded-none"
+            className="bg-swiss-black text-white hover:bg-electric-lime hover:text-swiss-black transition-colors font-bold px-10 sm:px-16 h-14 sm:h-16 text-base rounded-none w-full sm:w-auto"
           >
             Our Methods
           </Button>
@@ -302,7 +302,7 @@ export function Hero({ startAnimation }: { startAnimation: boolean }) {
           </p>
           <Button
             size="lg"
-            className="bg-electric-lime text-swiss-black hover:bg-swiss-black hover:text-white transition-colors font-bold px-20 h-16 text-base rounded-none"
+            className="bg-electric-lime text-swiss-black hover:bg-swiss-black hover:text-white transition-colors font-bold px-10 sm:px-20 h-14 sm:h-16 text-base rounded-none w-full sm:w-auto"
           >
             Join the Academy
           </Button>
